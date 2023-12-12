@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据类型</title>
+</head>
+
+<body>
+  <script>
+    // 数值类型
+    let a = 1
+    let b = 1.1
+    let notanum = '张三' - 11
+    console.log('a is ' + a)
+    console.log('b is ' + b)
+    console.log('notanum is ' + notanum) //输出:Nan(not a number)
+
+    //字符串类型
+    let name1 = 'jack'
+    let name2 = "james"
+    let name3 = `jerry`
+    console.log('name1 is ' + name1)
+    console.log('name2 is ' + name2)
+    console.log('name3 is ' + name3)
+    //模板字符串：反引号包裹+${}
+    let age = 18
+    console.log(`刚满${age}岁`)
+    //例子
+    let question = prompt('你好请问你今年多大?')
+    document.write(`刚满${question}岁`)
+
+    //数据类型检测
+    let num = 1.1
+    console.log(typeof num) //控制台输出number
+    let obj = null
+    console.log(typeof obj) //控制台输出object
+    let redvelet = ['xxx', 'xxxx']
+    console.log(typeof redvelet) //控制台输出object
+
+    //数据类型转换
+    //+号单个使用可以使字符串转化为数字类型
+    //+号和字符串匹配使用，效果是拼接
+    //- * /等不同与+号，它们的效果是转换
+    let num1 = prompt('请输入一个数字1:') //输入:22
+    let num2 = prompt('请输入一个数字2:') //输入:22
+    console.log(`${num1}+${num2} = ` + ((+num1) + (+num2))) //控制台输出:44
+    console.log(`${num1}+${num2} = ` + ((+num1) + (num2)))  //控制台输出:2222
+    console.log(`${num1}+${num2} = ` + ((num1) + (num2)))  //控制台输出:2222
+    console.log(`${num1}-${num2} = ` + ((num1) - (num2)))  //控制台输出:0
+
+    let num10 = '12000.001'
+    console.log(typeof num10)  //控制台输出:0
+    console.log(typeof +num10)  //控制台输出:0
+    console.log(typeof Number(num10))  //控制台输出:0
+    console.log(Number(num10))  //控制台输出:12000.001
+    console.log(parseInt(num10))  //控制台输出:12000
+    console.log(parseFloat(num10))  //控制台输出:12000.001
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组操作的api</title>
+</head>
+
+<body>
+  <script>
+    //1.新增 push unshift - 返回新增后的长度
+    let redvelet = []
+    console.log(redvelet.push('裴珠泫'))//尾插
+    console.log(redvelet.push('裴珠泫', '姜涩琪', '孙承完'))//尾插
+    console.log(redvelet.unshift('irene'))//头插
+    console.log(redvelet)
+
+    //2.删除 shift splice - 返回删除的内容
+    console.log(redvelet.shift())//头删
+    console.log(redvelet.pop())//尾删
+    console.log(redvelet.splice(0, 2))//删除指定区间，左闭右闭
+    console.log(redvelet)
+
+
+
+    //2.
+  </script>
+</body>
+
+</html>

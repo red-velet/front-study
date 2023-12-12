@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组</title>
+</head>
+
+<body>
+  <script>
+    let redvelet = ['裴珠泫', '姜涩琪', "孙承完", "朴秀荣"]
+    console.log('redvelet is ' + redvelet)  //控制台输出:redvelet is 裴珠泫,姜涩琪,孙承完,朴秀荣
+    console.log(redvelet)
+    //使用索引访问: 数组名[索引号]
+    console.log(redvelet[0])  //控制台输出:裴珠泫
+    console.log(redvelet[3])  //控制台输出:朴秀荣
+    //数组的遍历
+    for (let i = 0; i < redvelet.length; i++) {
+      console.log('redvelet[' + i + ']' + ':' + '索引:' + i + '/' + '内容:' + redvelet[i])
+    }
+  </script>
+</body>
+
+</html>

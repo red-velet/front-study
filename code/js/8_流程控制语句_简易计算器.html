@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简易计算器</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    caption {
+      caption-side: top;
+      /* 将标题放在表格顶部 */
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      text-align: center;
+      padding: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    //if else分支
+    let num1 = +prompt('请输入数字1');
+    let num2 = +prompt('请输入数字2');
+    let sym = prompt('请输入运算符+ - * / %');
+    if (sym == '+') {
+      document.write(`
+      <table>
+    <thead>
+      <caption>简易计算器</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>${num1 + num2}</td>
+      </tr>
+    </tbody>
+  </table>
+      `)
+    } else if (sym == '-') {
+      document.write(`
+      <table>
+    <thead>
+      <caption>简易计算器</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>${num1 - num2}</td>
+      </tr>
+    </tbody>
+  </table>
+      `)
+    } else if (sym == '*') {
+      document.write(`
+      <table>
+    <thead>
+      <caption>简易计算器</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>${num1 * num2}</td>
+      </tr>
+    </tbody>
+  </table>
+      `)
+    } else if (sym == '+') {
+      document.write(`
+      <table>
+    <thead>
+      <caption>简易计算器</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>${num1 + num2}</td>
+      </tr>
+    </tbody>
+  </table>
+      `)
+    } else if (sym == '/') {
+      document.write(`
+      <table>
+    <thead>
+      <caption>简易计算器</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>${num1 / num2}</td>
+      </tr>
+    </tbody>
+  </table>
+      `)
+    } else {
+      document.write(`
+      <table>
+    <thead>
+      <caption>简易计算器</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>运算符不合法</td>
+      </tr>
+    </tbody>
+  </table>
+      `)
+    }
+
+    //switch分支
+    let opt = ``;
+    switch (sym) {
+      case '+':
+        opt = `
+      <table>
+    <thead>
+      <caption>简易计算器switch</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>${num1 + num2}</td>
+      </tr>
+    </tbody>
+  </table>
+      `
+        break
+      case '-':
+        opt = `
+      <table>
+    <thead>
+      <caption>简易计算器switch</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>${num1 - num2}</td>
+      </tr>
+    </tbody>
+  </table>
+      `
+        break
+      case '*':
+        opt = `
+      <table>
+    <thead>
+      <caption>简易计算器switch</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>${num1 * num2}</td>
+      </tr>
+    </tbody>
+  </table>
+      `
+        break
+      case '/':
+        opt = `
+      <table>
+    <thead>
+      <caption>简易计算器switch</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>${num1 / num2}</td>
+      </tr>
+    </tbody>
+  </table>
+      `
+        break
+      default:
+        opt = `
+      <table>
+    <thead>
+      <caption>简易计算器switch</caption>
+      <tr>
+        <th>数字num1</th>
+        <th>运算符</th>
+        <th>数字num2</th>
+        <th>结果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${num1}</td>
+        <td>${num2}</td>
+        <td>${sym}</td>
+        <td>运算符不合法</td>
+      </tr>
+    </tbody>
+  </table>
+      `
+    }
+    document.write(opt)
+  </script>
+</body>
+
+</html>

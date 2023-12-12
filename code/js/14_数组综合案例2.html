@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组综合案例2</title>
+</head>
+
+<body>
+  <script>
+    let arr = [1, 2, 5, 8, 1]
+    document.write(`未排序前:`)
+    for (let i = 0; i < arr.length; i++) {
+      document.write(`${arr[i]} &nbsp;`)
+    }
+    document.write(`<br/>排序后:`)
+    for (let i = 0; i < arr.length - 1; i++) {
+      for (let j = 0; j < arr.length - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+          let tmp = arr[j]
+          arr[j] = arr[j + 1]
+          arr[j + 1] = tmp
+        }
+      }
+    }
+    for (let i = 0; i < arr.length; i++) {
+      document.write(`${arr[i]} &nbsp;`)
+    }
+    //简便
+    arr.sort(function (a, b) {
+      return b - a;
+    })
+    document.write(`<br/>排序后:`)
+    for (let i = 0; i < arr.length; i++) {
+      document.write(`${arr[i]} &nbsp;`)
+    }
+  </script>
+</body>
+
+</html>

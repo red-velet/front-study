@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>综合案例</title>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  caption {
+    caption-side: top;
+    /* 将标题放在表格顶部 */
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+  }
+</style>
+
+<body>
+  <table id="tb_order" style="border: 1px solid black;">
+    <thead>
+      <caption>订单确认</caption>
+      <tr>
+        <th>商品名称</th>
+        <th>商品价格</th>
+        <th>商品数量</th>
+        <th>商品总价</th>
+        <th>收获地址</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="name"></td>
+        <td id="price"></td>
+        <td id="count"></td>
+        <td id="total_price"></td>
+        <td id="address"></td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    let name = prompt('请输入订单名称')
+    let price = prompt('请输入商品金额')
+    let count = prompt('请输入商品数量')
+    let address = prompt('请输入收货地址')
+    let total_price = price * count;
+    document.getElementById('name').innerHTML = name
+    document.getElementById('price').innerHTML = price
+    document.getElementById('count').innerHTML = count
+    document.getElementById('address').innerHTML = address
+    document.getElementById('total_price').innerHTML = total_price
+
+
+  </script>
+</body>
+
+</html>

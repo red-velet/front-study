@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常量</title>
+</head>
+
+<body>
+  <script>
+    const PI = 3.1415926;
+    console.log('PI is ' + PI)
+    PI = 3
+    console.log('PI is ' + PI) //控制台输出:Uncaught TypeError: Assignment to constant variable.at 5_常量.html: 14: 8
+  </script>
+</body>
+
+</html>
