@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom综合案例</title>
+</head>
+
+<body>
+  <span id="username_text">用户名:</span> <input id="username" type="text" />
+  <button class="btn">切换</button>
+  <hr>
+  <h2>选择您喜欢的水果：</h2>
+  <button class="btnAll">全选</button>
+  <form>
+    <label for="apple">
+      <input type="checkbox" id="apple" name="fruit" value="apple">
+      苹果
+    </label><br>
+    <label for="orange">
+      <input type="checkbox" id="orange" name="fruit" value="orange">
+      橙子
+    </label><br>
+    <label for="banana">
+      <input type="checkbox" id="banana" name="fruit" value="banana">
+      香蕉
+    </label><br>
+    <label for="grape">
+      <input type="checkbox" id="grape" name="fruit" value="grape">
+      葡萄
+    </label><br>
+  </form>
+  <hr>
+  <div id="myDiv" data-category="fruit" data-color="red">
+    这是一个带有自定义属性的 div 元素。
+  </div>
+  <hr>
+  <h2>倒计时<span class="myTime">5</span>秒</h2>
+  <script>
+    const btn = document.querySelector('.btn')
+    btn.addEventListener('click', function () {
+      const usernameText = document.querySelector('#username_text')
+      const username = document.querySelector('#username')
+      if (usernameText.textContent == '用户名:') {
+        usernameText.innerHTML = '密码:'
+        username.type = 'password'
+      } else {
+        usernameText.innerHTML = '用户名:'
+        username.type = 'text'
+      }
+    })
+    //----------------------
+    const btnAll = document.querySelector('.btnAll')
+    btnAll.addEventListener('click', function () {
+      const fruit = document.querySelectorAll('[name="fruit"]')
+      console.log(fruit)
+      if (btnAll.textContent == '全选') {
+        btnAll.innerHTML = '取消全选'
+        for (let key in fruit) {
+          fruit[key].checked = true
+        }
+      } else {
+        btnAll.innerHTML = '全选'
+        for (let key in fruit) {
+          fruit[key].checked = false
+        }
+      }
+    })
+    //-------------------------
+    //获取自定义属性
+    const myDiv = document.getElementById('myDiv')
+    const dataSet = myDiv.dataset;
+    console.log(dataSet)
+    console.log(dataSet.category)
+    console.log(dataSet.color)
+
+    console.log(myDiv.getAttribute('data-category'))
+    console.log(myDiv.getAttribute('data-color'))
+
+    // 在 2000 毫秒（2秒）后执行一次特定的代码
+    setTimeout(function () {
+      // 这里是要执行的代码
+      console.log('2秒后执行这里的代码');
+    }, 2000);
+
+    // 每隔 1000 毫秒（1秒）重复执行一次特定的代码
+    let interval = setInterval(function () {
+      // 这里是要重复执行的代码
+      console.log('每隔1秒执行一次');
+    }, 1000);
+
+
+    //倒计时
+    const myTime = document.querySelector('.myTime')
+    let count = +myTime.textContent;
+    let timeOut = function () {
+      let nowNumber = +myTime.textContent
+      nowNumber--
+      myTime.textContent = nowNumber
+    }
+    let myInterval = setInterval(function () {
+      if (count == 0) {
+        clearInterval(timeOut)
+      } else {
+        timeOut()
+        count--
+      }
+    }, 1000);
+
+  </script>
+</body>
+
+</html>

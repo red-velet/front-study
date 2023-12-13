@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件监听_综合案例1</title>
+  <style>
+    #box {
+      border: 5px solid orchid;
+      justify-content: center;
+      /* 水平居中 */
+      align-items: center;
+      /* 垂直居中 */
+      /* 如果需要设置宽度和高度，可以在这里添加 */
+      width: 50%;
+      /* 例如设置宽度 */
+      height: 300px;
+    }
+
+    img {
+      max-width: 50%;
+      /* 图片最大宽度为父元素宽度 */
+      height: auto;
+      /* 高度自动调整，保持宽高比 */
+      border: 1px solid rgb(216, 88, 88);
+      position: relative;
+      left: 180px;
+    }
+
+    .lm {
+      display: block;
+      width: 50px;
+      height: auto;
+      background-color: rgb(132, 147, 147);
+      border: 1px solid black;
+      position: relative;
+      left: 190px;
+      top: 10px;
+      cursor: pointer;
+
+    }
+
+    .rm {
+      width: 50px;
+      height: auto;
+      background-color: rgb(113, 216, 216);
+      border: 1px solid black;
+      position: relative;
+      left: 470px;
+      top: -15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="box">
+    <p class="imgUrl"></p>
+    <img src="./images/1.jpg">
+    <span class="lm">
+      &lt;&lt; </span>
+    <span class="rm">
+      &gt;&gt; </span>
+  </div>
+  <script>
+    document.querySelector('.imgUrl').textContent = document.querySelector('img').src
+    let lbt = function (imgNum = 4) {
+      const myImg = document.querySelector('img')
+      const imgUrl = document.querySelector('.imgUrl')
+      let imgSource = myImg.src
+      let newArr = imgSource.split('/')
+      let suffix = newArr[newArr.length - 1]
+
+      let nowImgArr = suffix.split('.')
+      let nowImg = nowImgArr[0]
+      if (+nowImg == imgNum) {
+        nowImg = 0
+      }
+      nowImg++
+      let path = './images/' + nowImg + '.' + nowImgArr[1];
+      myImg.src = path
+      imgUrl.textContent = path
+    }
+    let lbt2 = function (imgNum = 0) {
+      const myImg = document.querySelector('img')
+      const imgUrl = document.querySelector('.imgUrl')
+      let imgSource = myImg.src
+      let newArr = imgSource.split('/')
+      let suffix = newArr[newArr.length - 1]
+
+      let nowImgArr = suffix.split('.')
+      let nowImg = nowImgArr[0]
+      nowImg--
+      if (+nowImg == imgNum) {
+        nowImg = 4
+      }
+      let path = './images/' + nowImg + '.' + nowImgArr[1];
+      myImg.src = path
+      imgUrl.textContent = path
+    }
+    let lbtTimer = setInterval(function () {
+      lbt()
+    }, 3000)
+
+    let lBtn = document.querySelector('.lm')
+    lBtn.addEventListener('click', function () {
+      lbt2()
+    })
+
+    let rBtn = document.querySelector('.rm')
+    rBtn.addEventListener('click', function () {
+      lbt()
+    })
+
+    let myImg = document.querySelector('img')
+    myImg.addEventListener('mouseleave', function () {
+      lbt()
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM树</title>
+  <style>
+    .active1 {
+      border: 1px solid black;
+    }
+
+    .active2 {
+      border: 3px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>hello world</h1>
+  <ul>
+    <li id="pzx">裴珠泫</li>
+    <li>姜涩琪</li>
+  </ul>
+  <script>
+    const uli = document.querySelector('ul')
+    console.log(uli)
+    const uliCh = uli.childNodes
+    console.log(uliCh)
+
+    //操作对象内容
+    const pzx = document.querySelector('#pzx')
+    pzx.innerText = 'irene'
+    pzx.innerHTML = '<b>irene</b>'
+    pzx.textContent = '<b>irene</b>'
+
+    //pzx.style.backgroundColor = 'red';
+    pzx.style.fontSize = '40px';
+
+    pzx.classList.add('active1')
+    pzx.classList.remove('active1')
+    pzx.classList.toggle('active2')
+
+  </script>
+</body>
+
+</html>

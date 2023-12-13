@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象综合案例</title>
+</head>
+
+<body>
+  <button id="btn">点名</button>
+</body>
+<script>
+  let users = ['周杰伦', '张学友', '郭富城', '刘德华', '黎明', '王力宏', '谢霆锋']
+  document.getElementById('btn').addEventListener('click', function () {
+    let res = []
+    for (let i = 0; i < 3; i++) {
+      let randomNum = Math.floor(Math.random() * users.length)
+      res[i] = users[randomNum]
+    }
+    document.write(`<h3>点到了: ${res}</h3>`)
+  })
+</script>
+
+</html>

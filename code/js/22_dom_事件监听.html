@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件监听</title>
+</head>
+
+<body>
+  <button class="btn">点击出现弹窗</button>
+  <hr>
+
+
+
+  <h1 style=" text-align: center;">点名小游戏</h1>
+  <p style=" text-align: center;">被点到的是⬇⬇⬇⬇</p>
+  <div style="border: 2px solid black; width: 90px;height: 90px;margin-left:47% ;">
+    <p style=" text-align: center;">
+      <span id="result">还没开始</span>
+    </p>
+  </div>
+  <div style=" text-align: center; margin-top: 10px">
+    <button id="startButton">开始</button>
+    <button id="stopButton">结束</button>
+  </div>
+
+
+  <script>
+    // 获取按钮元素
+    const btn = document.querySelector('.btn')
+
+    // 添加点击事件监听器
+    btn.addEventListener('click', function () {
+      alert('按钮被点击了！');
+    });
+
+    //----------------------------------------------
+    let names = ['周杰伦', '张学友', '郭富城', '刘德华', '黎明', '王力宏', '谢霆锋']
+    let switchName = function () {
+      const result = document.querySelector('#result')
+      let randonIndex = Math.floor(Math.random() * names.length)
+      result.textContent = names[randonIndex]
+    }
+    let printName = function () {
+      const result = document.querySelector('#result')
+      const bd = document.querySelector('body')
+      const newChild = document.createElement('p')
+      newChild.style.textAlign = 'center'
+      newChild.textContent = '点名结果:' + result.textContent
+      bd.appendChild(newChild)
+    }
+    let startButton = document.querySelector('#startButton')
+    let swhTimer
+    startButton.addEventListener('click', function () {
+      swhTimer = setInterval(function () {
+        switchName()
+      }, 50)
+
+    })
+
+    let stopButton = document.querySelector('#stopButton')
+    stopButton.addEventListener('click', function () {
+      clearInterval(swhTimer)
+      printName()
+    })
+
+
+  </script>
+</body>
+
+</html>

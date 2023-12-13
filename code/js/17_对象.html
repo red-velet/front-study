@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象</title>
+</head>
+
+<body>
+  <script>
+    //字面量
+    let person = {
+      name: 'redvelet',
+      age: '12',
+      gender: 'woman'
+    }
+    console.log(person)
+    //构造函数
+    let person2 = new Object()
+    person2.name = 'redvelet'
+    person2.age = '12'
+    person2.gender = 'woman'
+    person2.collage = 'hbnu'
+    console.log(person2)
+    //类
+    class Person {
+      constructor(name, age, city) {
+        this.name = name;
+        this.age = age;
+        this.city = city;
+      }
+    }
+    let person3 = new Person('wendy', 28, '西巴国');
+    console.log(person3)
+
+    //对象方法
+    let person4 = {
+      name: 'Alice',
+      age: 25,
+      greet: function () {
+        console.log('Hello! My name is ' + this.name + ' and I am ' + this.age + ' years old.');
+      }
+    };
+
+    // 调用对象方法
+    person4.greet(); // 输出: Hello! My name is Alice and I am 25 years old.
+    console.log(person4)
+
+    let person5 = {
+      name: 'Alice',
+      age: 25,
+      greet() {
+        console.log(`Hello! My name is ${this.name} and I am ${this.age} years old.`);
+      }
+    };
+
+    person5.greet(); // 输出: Hello! My name is Alice and I am 25 years old.
+
+    //对象的遍历
+    for (key in person5) {
+      console.log(`key is ${key} | value is ${person5[key]}`)
+    }
+
+    //遍历数组对象
+    let users = [
+      { id: 1, name: 'Alice', age: 25 },
+      { id: 2, name: 'Bob', age: 30 },
+      { id: 3, name: 'Charlie', age: 22 },
+      { id: 4, name: 'David', age: 27 }
+    ];
+    for (let i = 0; i < users.length; i++) {
+      document.write(`users[${i}] = `)
+      for (key in users[i]) {
+        document.write(`${users[i][key]} &nbsp;`)
+      }
+      document.write(`<br/>`)
+    }
+
+
+  </script>
+</body>
+
+</html>

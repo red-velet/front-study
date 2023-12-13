@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>21_dom综合案例2.html</title>
+</head>
+<style>
+  img {
+    max-width: 30%;
+    /* 图片最大宽度为父元素宽度 */
+    height: auto;
+    /* 高度自动调整，保持宽高比 */
+    border: 1px solid rgb(216, 88, 88);
+  }
+</style>
+
+<body>
+  <div id="box">
+    <p class="imgUrl"></p>
+    <img src="./images/1.jpg">
+  </div>
+  <script>
+    document.querySelector('.imgUrl').textContent = document.querySelector('img').src
+    let lbt = function (imgNum = 4) {
+      const myImg = document.querySelector('img')
+      const imgUrl = document.querySelector('.imgUrl')
+      let imgSource = myImg.src
+      let newArr = imgSource.split('/')
+      let suffix = newArr[newArr.length - 1]
+
+      let nowImgArr = suffix.split('.')
+      let nowImg = nowImgArr[0]
+      if (+nowImg == imgNum) {
+        nowImg = 0
+      }
+      nowImg++
+      let path = './images/' + nowImg + '.' + nowImgArr[1];
+      myImg.src = path
+      imgUrl.textContent = path
+    }
+    let lbtTimer = setInterval(function () {
+      lbt()
+    }, 2000)
+  </script>
+</body>
+
+</html>

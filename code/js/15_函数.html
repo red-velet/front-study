@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>函数</title>
+</head>
+
+<body>
+  <script>
+    function get99() {
+      for (let i = 9; i > 0; i--) {
+        for (let j = 1; j <= i; j++) {
+          document.write(`${i} * ${j} = ${i * j} &nbsp;`)
+        }
+        document.write(`</br>`)
+      }
+    }
+    for (let i = 0; i < 1; i++) {
+      get99();
+      document.write(`</hr>`)
+    }
+    function getSum(x = 0, y = 0) { //不传参数，默认为0
+      document.write(`${x} * ${y} =${x + y}</br>`)
+    }
+    getSum(1, 2)
+    getSum()  //不传参数，默认为0
+
+    //求数组总和
+    function getArrSum(arr = []) { //不传参数，默认为0
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+      }
+      document.write(`arrSum =${sum}</br>`)
+    }
+    getArrSum()
+    getArrSum([1, 2, 3, 4, 5])
+
+  </script>
+</body>
+
+</html>
